@@ -40,7 +40,7 @@ function generateMarkdown(data) {
   ## Content information
 
   [Installation](#installation)
-  [License](#licence)${renderLicense(data.license)}
+  [License](#licence)${renderLicenseLink(data.license)}
   [Usage](#usage)
   [Dependencies](#dependencies)
   [Contributing](#contributing)
