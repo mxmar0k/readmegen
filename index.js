@@ -40,7 +40,7 @@ const questions = [
     },
     {
         type: "input",
-        name: "Project Dependencies",
+        name: "dependencies",
         message: "Enter the project dependencies you used:",
         default: "",
       },
@@ -58,7 +58,7 @@ const questions = [
     },
     {
       type: "input",
-      name: "name",
+      name: "username",
       message: "Enter your GitHub username(that's your realname now):",
       default: "",
     },
@@ -72,12 +72,6 @@ const questions = [
       type: "input",
       name: "email",
       message: "Enter your email address:",
-      default: "",
-    },
-    {
-      type: "input",
-      name: "github",
-      message: "Enter your GitHub username:",
       default: "",
     },
   ];
