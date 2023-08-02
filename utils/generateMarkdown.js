@@ -1,7 +1,7 @@
 function renderLicenseBadge(licenses) {
   if (licenses && Array.isArray(licenses)) {
     const licenseBadges = licenses.map((license) => {
-      const encodedLicense = encodeURIComponent(license);
+      const encodedLicense = encodeURIComponent(license); 
       return `![License](https://img.shields.io/badge/License-${encodedLicense}-blue.svg)`;
     });
     return licenseBadges.join("\n");
@@ -11,7 +11,7 @@ function renderLicenseBadge(licenses) {
 
 function renderLicenseLink(license) {
   if (license) {
-    return `\n* [License](#license)\n`;
+    return `[License](#license)`;
   }
   return '';
 }
@@ -39,8 +39,7 @@ ${data.description}
 
 ## Table of Contents
 
-[Installation](#installation)
-${renderLicenseLink(data.license)}
+[Installation](#installation) ${renderLicenseLink(data.license)}
 [Usage](#usage)
 [Dependencies](#dependencies)
 [Contributing](#contributing)
@@ -77,7 +76,6 @@ ${data.email}
 
 ## Questions
 For questions about this project, please contact ${data.name} at ${data.email}. GitHub: [${data.username}](https://github.com/${data.username})
-
 `;
 }
 
