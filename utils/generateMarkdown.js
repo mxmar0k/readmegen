@@ -1,14 +1,14 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
-function renderLicenseBadge(license) {
-  if (license) {
-    return `![License](https://img.shields.io/badge/License-${license}-blue.svg)`;
+function renderLicenseBadge(licenses) {
+  if (licenses && Array.isArray(licenses)) {
+    const licenseBadges = licenses.map((license) => {
+      const encodedLicense = encodeURIComponent(license);
+      return `![License](https://img.shields.io/badge/License-${encodedLicense}-blue.svg)`;
+    });
+    return licenseBadges.join("\n");
   }
   return '';
 }
 
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
 function renderLicenseLink(license) {
   if (license) {
     return `\n* [License](#license)\n`;
@@ -16,70 +16,67 @@ function renderLicenseLink(license) {
   return '';
 }
 
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
-function renderLicenseSection(license) {
-  if (license) {
-    return `## License
-
-This project is licensed under the ${license} License.`;
+function renderLicenseSection(licenses) {
+  if (licenses && Array.isArray(licenses)) {
+    const licenseSection = licenses.map((license) => {
+      return `## License\nThis project is licensed under the ${license} License.`;
+    });
+    return licenseSection.join("\n");
   }
   return '';
 }
 
-
-// TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
+  const licenseBadges = renderLicenseBadge(data.license);
+  const licenseSection = renderLicenseSection(data.license);
+
   return `# ${data.title}
 
-  ${renderLicenseBadge(data.license)}
+${licenseBadges}
 
-  ## Description
-  ${data.description}
+## Description
+${data.description}
 
-  ## Content information
+## Table of Contents
 
-  [Installation](#installation)
-  [License](#licence)${renderLicenseLink(data.license)}
-  [Usage](#usage)
-  [Dependencies](#dependencies)
-  [Contributing](#contributing)
-  [Tests](#tests)
-  [Username](#username)
-  [Name](#name)
-  [Email](#email)
+[Installation](#installation)
+${renderLicenseLink(data.license)}
+[Usage](#usage)
+[Dependencies](#dependencies)
+[Contributing](#contributing)
+[Tests](#tests)
+[Username](#username)
+[Name](#name)
+[Email](#email)
 
+## Installation
+${data.installation}
 
-  ## Installation
-  ${data.installation}
+${licenseSection}
 
-  ## Licence
-  ${data.license}
-  ${renderLicenseSection(data.license)}
+## Usage
+${data.usage}
 
-  ## Usage
-  ${data.usage}
+## Dependencies
+${data.dependencies}
 
-  ## Dependencies
-  ${data.dependencies}
+## Contributing
+${data.contributing}
 
-  ## Contributing
-  ${data.contributing}
+## Tests
+${data.tests}
 
-  ## Tests
-  ${data.tests}
+## Username
+${data.username}
 
-  ## Username
-  ${data.username}
+## Name
+${data.name}
 
-  ## Name
-  ${data.name}
+## Email
+${data.email}
 
-  ## Email
-  ${data.email}
-
-  ## Questions
-  For questions about this project, please contact ${data.name} at ${data.email}.GitHub: [${data.github}](https://github.com/${data.github})
+## Questions
+For questions about this project, please contact ${data.name} at ${data.email}. GitHub: [${data.username}](https://github.com/${data.username})
 
 `;
 }
