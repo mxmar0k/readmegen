@@ -1,9 +1,9 @@
-# aaaa
+# lolo
 
 ![License](https://img.shields.io/badge/License-MIT%20License-blue.svg)
 
 ## Description
-aaa
+lolo
 
 ## Table of Contents
 
@@ -17,31 +17,31 @@ aaa
 [Email](#email)
 
 ## Installation
-aaa
+lolo
 
 ## License
 This project is licensed under the MIT License License.
 
 ## Usage
-dddddd
+Javascript
 
 ## Dependencies
-dddd
+Inquirer
 
 ## Contributing
-ddddd
+Lolo
 
 ## Tests
-dddd
+lolo
 
 ## Username
-ddddd
+dddd
 
 ## Name
 dddd
 
 ## Email
-w@d.com
+d@d.mx
 
 ## Questions
-For questions about this project, please contact dddd at w@d.com. GitHub: [ddddd](https://github.com/ddddd)
+For questions about this project, please contact dddd at d@d.mx. GitHub: [dddd](https://github.com/dddd)
